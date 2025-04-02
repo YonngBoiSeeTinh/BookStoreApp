@@ -1,0 +1,31 @@
+name: GOSY_admin
+description: "A new Flutter project."
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  clippy_flutter: ^2.0.0-nullsafety.1
+  cupertino_icons: ^1.0.8
+  curved_navigation_bar: ^1.0.6 
+  flutter_rating_bar: ^4.0.1
+  image_picker: ^0.8.7+4
+  intl: ^0.18.0
+  fl_chart: ^0.60.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  google_fonts: ^5.0.0
+  
+
+flutter:
+  uses-material-design: true
+
+  

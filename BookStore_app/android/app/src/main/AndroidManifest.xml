@@ -1,0 +1,75 @@
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:label="BookShop"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="flutter-deep-link"
+                android:value="true" />
+
+            <!-- Deep link for HTTP and HTTPS -->
+            <intent-filter  >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.mygosyapp.com"
+                    android:pathPrefix="/paymentResult" />
+                <data
+                    android:scheme="https"
+                    android:host="www.mygosyapp.com"
+                    android:pathPrefix="/paymentResult" />
+            </intent-filter>
+
+            <!-- Deep link for custom scheme -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="GOSY"
+                    android:host="go-sy"
+                    android:pathPrefix="/paymentResult" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Flutter plugin configuration -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest> 
+
