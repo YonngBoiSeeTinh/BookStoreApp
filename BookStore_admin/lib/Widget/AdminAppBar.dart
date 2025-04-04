@@ -18,7 +18,7 @@ class AdminAppBar extends StatelessWidget {
             child:  RichText(
                 textAlign: TextAlign.start,
                 text: TextSpan(
-                    text: 'Sh',
+                    text: 'Boo',
                     style: GoogleFonts.portLligatSans(
                       
                       fontSize: 30,
@@ -27,7 +27,7 @@ class AdminAppBar extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: 'op App',
+                        text: 'k Shop',
                         style: TextStyle(color: const Color.fromARGB(255, 219, 124, 64), fontSize: 30),
                       ),
                       TextSpan(

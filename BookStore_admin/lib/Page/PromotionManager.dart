@@ -1,10 +1,12 @@
 import 'dart:convert'; // Để decode Base64
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import '../AppConfig.dart';
 import '../Widget/Alter.dart';
 import 'CategoryAdd.dart';
 import 'CategoryEdit.dart';
+import 'PromotionAdd.dart';
 import 'PromotionEdit.dart';
 
 class PromotionManager extends StatefulWidget {
@@ -100,12 +102,12 @@ class _CategoryManagerState extends State<PromotionManager> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    'Tối thiểu : ${promotion['minPrice']}',
+                    'Tối thiểu : ${ NumberFormat('###,###').format(promotion['minPrice'])} đ ',
                     style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                    SizedBox(height: 8),
                   Text(
-                    'Tối đa      : ${promotion['maxValue']}',
+                    'Tối đa      : ${ NumberFormat('###,###').format(promotion['maxValue'])} đ',
                     style: TextStyle(fontSize: 20, color: const Color.fromARGB(255, 43, 43, 43)),
                   ),
                     SizedBox(height: 8),
@@ -205,7 +207,7 @@ class _CategoryManagerState extends State<PromotionManager> {
                             ),
                             SizedBox(height: 4),
                             Text(
-                              '${promotion['value']} %',
+                              '${ NumberFormat('###,###').format(promotion['value'])} %',
                                maxLines: 2, 
                               overflow: TextOverflow.ellipsis, 
                               style: TextStyle(fontSize: 18, color: Color(0xFF4C53A5)),
@@ -261,7 +263,7 @@ class _CategoryManagerState extends State<PromotionManager> {
         onPressed: () {
          Navigator.push(context, 
           MaterialPageRoute(
-            builder: (context) => (CategoryAddPage()), 
+            builder: (context) => (PromotionAddPage()), 
           ),);
         },
         backgroundColor: Color(0xFF4C53A5),
